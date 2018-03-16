@@ -1,0 +1,85 @@
+.selected-tags {
+  border-bottom: none;
+}
+
+.selected-tag {
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 18px;
+  border: 1px solid #afafaf;
+  margin: 5px;
+  padding: 0 0 3px 6px;
+}
+
+.tag-close {
+  font-size: 16px;
+  line-height: 18px;
+  background: none;
+  border: none;
+  margin: 0 0 -3px 6px;
+  cursor: pointer;
+  background: #efefef;
+  padding: 3px 4px 6px 4px;
+  color: #bcbcbc;
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+.tag-input-wrap {
+  position: relative;
+}
+
+.tag-input {
+  border-color: #efefef;
+  background: #f3f3f3;
+  line-height: 1rem;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 30px;
+
+
+  &.right-space {
+    padding-right: 46px;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.tag-loader {
+  position: absolute;
+  right: 16px;
+  top: 7px;
+}
+
+.tags-suggestion {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #efefef;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+
+  li {
+    line-height: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #efefef;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    &.active {
+      background: #f5f5f5;
+    }
+  }
+}

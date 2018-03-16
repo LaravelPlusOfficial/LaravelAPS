@@ -1,0 +1,143 @@
+// ---------------------------------------------------------
+// @TOC
+// ---------------------------------------------------------
+
+// + @Background Size
+// + @Background Position
+// + @Background Repeat
+// + @Object Fit
+// + @Resize
+// + @Opacity
+// + @Cursor
+// + @Visibility
+
+// ---------------------------------------------------------
+// @Background
+// ---------------------------------------------------------
+.bg-n { background: none }
+
+// ---------------------------------------------------------
+// @Background Size
+// ---------------------------------------------------------
+
+// Resize the background image to cover the entire container,
+// even if it has to stretch the image or cut a little bit off one of the edges
+.bgsz-cv { background-size : cover; }
+
+// Resize the background image to make sure the image is fully visible
+.bgsz-ct { background-size : contain; }
+
+.bgsz-full { background-size : 100% 100%; }
+
+// ---------------------------------------------------------
+// @Background Position
+// ---------------------------------------------------------
+
+.bgpX-l { background-position-x : left; }
+
+.bgpX-c { background-position-x : center; }
+
+.bgpX-r { background-position-x : right; }
+
+.bgpY-t { background-position-y : top; }
+
+.bgpY-c { background-position-y : center; }
+
+.bgpY-b { background-position-y : bottom; }
+
+// ---------------------------------------------------------
+// @Background Repeat
+// ---------------------------------------------------------
+
+.bgr-n { background-repeat : no-repeat; }
+
+.bgr-y { background-repeat : repeat-y; }
+
+.bgr-x { background-repeat : repeat-x; }
+
+// ---------------------------------------------------------
+// @Object Fit
+// ---------------------------------------------------------
+
+.of-ct { object-fit : contain; }
+
+.of-cv { object-fit : cover; }
+
+.of-f { object-fit : fill; }
+
+.of-n { object-fit : none; }
+
+.of-sd { object-fit : scale-down; }
+
+// ---------------------------------------------------------
+// @Resize
+// ---------------------------------------------------------
+
+.rsz-v { resize : vertical; }
+
+.rsz-h { resize : horizontal; }
+
+// ---------------------------------------------------------
+// @Opacity
+// ---------------------------------------------------------
+
+.op-0 { opacity : 0; }
+
+.op-10 { opacity : 0.1; }
+
+.op-20 { opacity : 0.2; }
+
+.op-30 { opacity : 0.3; }
+
+.op-40 { opacity : 0.4; }
+
+.op-50 { opacity : 0.5; }
+
+.op-60 { opacity : 0.6; }
+
+.op-70 { opacity : 0.7; }
+
+.op-80 { opacity : 0.8; }
+
+.op-90 { opacity : 0.9; }
+
+.op-10 { opacity : 1; }
+
+// ---------------------------------------------------------
+// @Cursor
+// ---------------------------------------------------------
+
+.cur-na { cursor : not-allowed; }
+
+.cur-p { cursor : pointer; }
+
+.cur-a { cursor : auto; }
+
+// ---------------------------------------------------------
+// @Visibility
+// ---------------------------------------------------------
+
+.vis-v { visibility : visible; }
+.vis-h { visibility : hidden; }
+
+
+// ---------------------------------------------------------
+// @Outline
+// ---------------------------------------------------------
+
+.otl-n { outline: none }
+.otl-n-hv:hover { outline: none }
+.otl-n-fc:focus { outline: none }
+
+.bxs-n { box-shadow:  none; }
+.bxs-n-hv:hover { box-shadow:  none; }
+.bxs-n-fc:focus { box-shadow:  none; }
+
+
+// ---------------------------------------------------------
+// @Overflow
+// ---------------------------------------------------------
+
+.ovf-h { overflow: hidden; }
+.ovf-y-a { overflow-y: auto; }
+.ovf-x-a { overflow-x: auto; }

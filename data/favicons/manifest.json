@@ -1,0 +1,17 @@
+{
+  "name": "Laravel Plus",
+  "icons": [
+    {
+      "src": "",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#E83E8C",
+  "display": "standalone"
+}

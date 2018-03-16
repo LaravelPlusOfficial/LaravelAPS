@@ -1,0 +1,28 @@
+.grad-atlas {
+  background: #c57958;  /* fallback for old browsers */
+  //background: -webkit-linear-gradient(to right, #4BC0C8, #af65b8, #c57958);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4BC0C8, #af65b8, #c57958); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.grad-azure {
+  background: linear-gradient(to right, #ef32d9, #89fffd);
+  color: white !important;
+}
+
+.grad-error {
+  background: linear-gradient(to right, #ee0979, #ff6a00);
+  color: white !important;
+}
+
+.grad-success {
+  background: linear-gradient(to right, #1D976C, #93F9B9);
+  color: white !important;
+}
+
+.grad-primary {
+  background: linear-gradient(to right, #bc4e9c, #f80759);
+}
+
+.grad-primary-v {
+  background: linear-gradient(to top, #bc4e9c, #f80759);
+}

@@ -1,0 +1,70 @@
+// ---------------------------------------------------------
+// @TOC
+// ---------------------------------------------------------
+
+// + @Quick Border Helpers
+// + @Border Width
+// + @Border Radius
+// + @Border Style
+
+// ---------------------------------------------------------
+// @Quick Border Helpers
+// ---------------------------------------------------------
+
+.bd { border : #{$border-width} solid #{$border-color}; }
+
+.bdT { border-top : #{$border-width} solid #{$border-color}; }
+
+.bdR { border-right : #{$border-width} solid #{$border-color}; }
+
+.bdB { border-bottom : #{$border-width} solid #{$border-color}; }
+
+.bdL { border-left : #{$border-width} solid #{$border-color}; }
+
+.bd-n { border: none !important; }
+
+// ---------------------------------------------------------
+// @Border Style
+// ---------------------------------------------------------
+
+.bds-n { border-style : none; }
+
+.bds-s { border-style : solid; }
+
+.bds-dt { border-style : dotted; }
+
+.bds-ds { border-style : dashed; }
+
+.bds-db { border-style : double; }
+
+.bds-g { border-style : groove; }
+
+.bds-r { border-style : ridge; }
+
+.bds-i { border-style : inset; }
+
+.bds-o { border-style : outset; }
+
+// ---------------------------------------------------------
+// @Border width
+// ---------------------------------------------------------
+
+.bdw-1 { border-width : 1px; }
+
+.bdw-2 { border-width : 2px; }
+
+.bdw-3 { border-width : 3px; }
+
+.bdw-4 { border-width : 4px; }
+
+.bdw-5 { border-width : 5px; }
+
+// ---------------------------------------------------------
+// @Border radius
+// ---------------------------------------------------------
+
+.bdr-5 { border-radius : 5px; }
+
+.bdr-50 { border-radius : 50%; }
+
+.bdr-10 { border-radius : 10px; }

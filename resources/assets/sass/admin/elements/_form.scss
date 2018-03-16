@@ -1,0 +1,177 @@
+.input-transparent {
+  background: darken($primary, 10%);
+  border: 1px solid transparent;
+  border-radius: 30px;
+  color: white;
+  transition: all 200ms ease-in-out;
+
+  &::placeholder {
+    color: darken($primary, 30%);
+  }
+
+  &:hover, &:focus {
+    outline: none !important;
+    background: darken($primary, 10%);
+    box-shadow: none;
+    border-color: transparent;
+    color: white;
+  }
+
+}
+
+// Labels
+label, .label {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.form-checkbox, .form-radio {
+  position: relative;
+  padding-left: 30px;
+  line-height: 20px;
+  cursor: pointer;
+
+  input {
+    display: none;
+
+    &:checked + span {
+      &:before {
+        border-color: $primary;
+      }
+      &:after {
+        transform: rotate(40deg) scale(1);
+        opacity: 1;
+        visibility: visible;
+        border-color: $primary;
+      }
+    }
+
+  }
+
+  span {
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 1px;
+      width: 18px;
+      height: 18px;
+      border: 1px solid $gray-700;
+      transition: all 200ms ease-in-out;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      left: 6px;
+      top: 3px;
+      width: 6px;
+      height: 12px;
+      border: 2px solid $gray-700;
+      border-top: 0;
+      border-left: 0;
+      transform: rotate(40deg) scale(0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 200ms ease-in-out;
+    }
+  }
+
+}
+
+.form-radio {
+
+  input {
+
+    &:checked + span {
+
+      &:before {
+        border-color: $primary;
+      }
+      &:after {
+        transform: rotate(40deg) scale(1);
+        opacity: 1;
+        visibility: visible;
+        border-color: $primary;
+      }
+    }
+
+  }
+
+  span {
+    &:before {
+      border-radius: 50%;
+    }
+
+    &:after {
+      left: 3px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: $primary;
+    }
+  }
+
+}
+
+input[type=color] {
+  max-width: 100px !important;
+  padding: 0 !important;
+}
+
+.toggle {
+  position: relative;
+  padding-left: 50px;
+  line-height: 20px;
+  cursor: pointer;
+
+  input {
+    display: none;
+
+    &:checked + span {
+      &:before {
+        background: $success;
+        border-color: $success;
+      }
+      &:after {
+        left: 37px - 16px;
+      }
+    }
+
+  }
+
+  span {
+    cursor: pointer;
+
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 1px;
+      width: 40px;
+      height: 20px;
+      border-radius: 10px;
+      background: $gray-500;
+      border: 1px solid $gray-500;
+      transition: all 200ms ease-in-out;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      left: 3px;
+      top: 3px;
+      width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      background: white;
+      border: 1px solid white;
+      transition: all 200ms ease-in-out;
+    }
+
+  }
+
+}

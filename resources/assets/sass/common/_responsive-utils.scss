@@ -1,0 +1,11 @@
+@include media-breakpoint-down(md) {
+  .hide-below-lg {
+    display: none;
+  }
+}
+
+@include media-breakpoint-up(lg){
+  .hide-above-lg {
+    display: none;
+  }
+}

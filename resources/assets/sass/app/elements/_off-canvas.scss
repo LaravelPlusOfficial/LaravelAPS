@@ -1,0 +1,91 @@
+.off-canvas {
+  width: $off-canvas-width;
+  margin-left: -$off-canvas-width;
+  transition: all 200ms ease-in-out;
+  padding: 0 10px 10px 10px;
+  overflow-y: auto;
+
+  @include media-breakpoint-down(md) {
+    &.open {
+      margin-left: 0;
+    }
+  }
+
+}
+
+.off-canvas-overlay {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin-left: -100%;
+  bottom: 0;
+  background: rgba(0,0,0,0.2);
+  //background: rgba(255,255,255,0.4);
+  z-index: $zindex-fixed;
+  transition: all 200ms ease-in-out;
+}
+
+body.off-canvas-open-left {
+  .off-canvas-overlay {
+    margin-left: $off-canvas-width;
+  }
+}
+
+.off-canvas-logo {
+  border-bottom: 1px solid darken($primary, 10%);
+  height: 57px;
+}
+
+.off-canvas-search {
+  border-bottom: 1px solid darken($primary, 10%);
+
+  input {
+    border: none;
+    //background: darken($primary, 10%);
+    background: rgba(255,255,255,0.2);
+    padding: 5px 10px;
+    border-radius: 25px;
+    color: white;
+    transition: all 150ms ease-in-out;
+
+    &::placeholder {
+      color: darken($primary, 20%);
+    }
+
+    &:hover, &:focus {
+      outline: none;
+      //background: darken($primary, 12%);
+      background: rgba(255,255,255,0.4);
+    }
+
+  }
+
+}
+
+.off-canvas-nav {
+  position: relative;
+  display: block;
+
+  .nav-link {
+    //background: yellow;
+    transition: background-color 200ms ease-in-out;
+
+    &:hover, &:focus {
+      border-radius: $border-radius;
+      //background: darken($primary, 5%);
+      background: rgba(255,255,255, 0.3);
+    }
+
+  }
+
+  li {
+    display: block;
+
+    a {
+      color: white;
+    }
+
+  }
+
+}

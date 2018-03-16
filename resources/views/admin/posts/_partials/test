@@ -1,0 +1,243 @@
+<form action="{{ route('admin.post.store') }}" @submit.prevent="" @keydown="post.errors.clear($event.target.name)">
+        <div class="container-fluid" v-cloak>
+
+            <div class="row pb-5">
+
+                <div class="col-lg-12 mb-3">
+                    <h1 class="fsz-md ls-12 tt-u">
+                        <span v-if="!post.id">
+                            {{ $isPage ? 'Create Page' : 'Create post' }}
+                        </span>
+                        <span v-if="post.id" class="d-f ac-c ai-c">
+                            <span>Edit {{ $isPage ? 'page' : 'post' }} &nbsp;</span>
+
+                            <span class="badge badge-success fsz-xs" v-if="post.status === 'published'">Published</span>
+                            <span class="badge badge-secondary fsz-xs" v-if="post.status === 'draft'">Draft</span>
+                        </span>
+                    </h1>
+                    <h4 class="fsz-md c-gray" v-text="post.title"></h4>
+                </div>
+
+                <div class="col-lg-8 mb-4">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="title"
+                                       v-model="post.title"
+                                       placeholder="Post title...">
+                                <p class="c-red mb-0 fs-i fsz-sm"
+                                   v-if="post.errors.has('title')"
+                                   v-text="post.errors.get('title')"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="body">Content</label>
+
+                                <wysiwyg :id="'post-body-wysiwyg-create'"
+                                         v-model="post.body"
+                                         :value="post.body"
+                                         name="body"
+                                         v-if="! postData"
+                                         placeholder="Write some thing cool...">
+                                </wysiwyg>
+
+                                <wysiwyg :id="'post-body-wysiwyg-edit'"
+                                         v-model="post.body"
+                                         :value="post.body"
+                                         name="body"
+                                         v-if="post.id"
+                                         placeholder="Write some thing cool...">
+                                </wysiwyg>
+
+                                <p class="c-red mb-0 fs-i fsz-sm"
+                                   v-if="post.errors.has('body')"
+                                   v-text="post.errors.get('body')"></p>
+                            </div>
+
+                            <div class="form-group mb-0">
+                                <label for="excerpt">Excerpt</label>
+                                <textarea name="excerpt"
+                                          id="excerpt"
+                                          rows="4"
+                                          v-model="post.excerpt"
+                                          class="form-control"
+                                          placeholder="Excerpt..."></textarea>
+                                <p class="c-red mb-0 fs-i fsz-sm"
+                                   v-if="post.errors.has('excerpt')"
+                                   v-text="post.errors.get('excerpt')"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="meta-keywords">Meta Keywords</label>
+                                <textarea name="meta['keywords']"
+                                          id="meta-keywords"
+                                          rows="4"
+                                          class="form-control"
+                                          v-model="post.metas.keywords"
+                                          placeholder="Meta Keywords..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="meta-description">Meta Description</label>
+                                <textarea name="meta['description']"
+                                          id="meta-description"
+                                          rows="4"
+                                          class="form-control"
+                                          v-model="post.metas.description"
+                                          placeholder="Meta Discription..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-checkbox">
+                                    <input type="checkbox" v-model="post.metas.no_index">
+                                    <span>NOINDEX</span>
+                                </label>
+                                <small class="form-text text-muted">NOINDEX is a meta tag that can be displayed to
+                                    search robots that
+                                    requests them not to index content. The specific directive differs between each
+                                    search robot. For example, the directive it gives Google’s search robots is Do not
+                                    show this Post/Page in search results and do not show a “Cached” link in search
+                                    results. Other search robots interpretation may be different.
+                                </small>
+                            </div>
+
+                            <div class="form-group mb-0">
+                                <label class="form-checkbox">
+                                    <input type="checkbox" v-model="post.metas.no_follow">
+                                    <span>NOFOLLOW</span>
+                                </label>
+                                <small class="form-text text-muted">NOFOLLOW is a meta tag that can be displayed to
+                                    search robots that
+                                    requests them not to follow any links in your content.
+                                </small>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <button type="button"
+                                        v-if="!post.id"
+                                        @click="publish()"
+                                        class="btn btn-primary label">
+                                    Publish
+                                </button>
+                                <button type="button"
+                                        v-if="post.id"
+                                        @click="update()"
+                                        class="btn btn-primary label">
+                                    Update
+                                </button>
+                                <button type="button"
+                                        v-if="post.id && post.status === 'published'"
+                                        @click="unPublish()"
+                                        class="btn btn-secondary label">
+                                    Un Publish
+                                </button>
+
+                                <button type="button"
+                                        v-if="post.id && post.status === 'draft'"
+                                        @click="publish(true)"
+                                        class="btn btn-success label">
+                                    Publish
+                                </button>
+
+                                <button type="button"
+                                        v-if="!post.id"
+                                        @click="draft()"
+                                        class="btn btn-secondary label">
+                                    draft
+                                </button>
+
+                                <a href="#"
+                                   class="btn fill-gray fill-primary-hv otl-n-fc otl-n-hv bxs-n-fc"
+                                   @click.prevent="deletePost()">
+                                    <vue-svg name="icon-delete" square="20"></vue-svg>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    @if(!$isPage)
+
+                        <!--- Taxonomies --->
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <h5 class="card-title label">Category</h5>
+
+                                <p class="c-red mb-0 fs-i fsz-sm"
+                                   v-if="post.errors.has('categories')"
+                                   v-text="post.errors.get('categories')"></p>
+
+                                <div class="bg-gray1 pt-2 pl-3 pr-3">
+                                    @include('admin.posts._partials.category-list', [
+                                        'categories' => $categories,
+                                        'classes' => 'mb-0 tree-ul max-ht-400'
+                                    ])
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <h5 class="card-title label">Tags</h5>
+
+                                @include('admin.posts._partials.tag-input')
+
+                            </div>
+                        </div>
+
+                    @endif
+
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title label">Featured Image</h5>
+
+                            <div class="d-f jc-c">
+                                <img :src="post.featured_image.variations.thumbnail.path"
+                                     class="mw-100 mt-2"
+                                     v-if="post.featured_image && post.featured_image.variations.thumbnail.path">
+                            </div>
+
+                            <div class="d-f jc-c mt-4">
+                                <button type="button"
+                                        @click="selectFeaturedImage()"
+                                        class="p-0 m-0 lh-1 bg-n bd-n fill-gray fill-primary-hv cur-p">
+                                    <vue-svg name="icon-image" v-if="!post.featured_image_id" square="20"></vue-svg>
+                                    <vue-svg name="icon-edit" v-if="post.featured_image_id" square="20"></vue-svg>
+                                </button>
+                                <button type="button"
+                                        @click="removeFeaturedImage()"
+                                        class="p-0 m-0 lh-1 bg-n bd-n fill-gray fill-primary-hv cur-p ml-3">
+                                    <vue-svg name="icon-delete" v-if="post.featured_image_id" square="20"></vue-svg>
+                                </button>
+                            </div>
+
+                            @include('admin.media._media-library', ['embed' => 'false'])
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </form>

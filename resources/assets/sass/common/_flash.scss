@@ -1,0 +1,9 @@
+.flash {
+  padding-left: $off-canvas-width;
+  height: 56px;
+
+  @include media-breakpoint-down(md)  {
+    padding-left: 0;
+  }
+
+}

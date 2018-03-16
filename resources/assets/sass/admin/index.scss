@@ -1,0 +1,33 @@
+/*
+BOOTSTRAP
+ */
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+
+@import "../settings/index";
+
+@import "~bootstrap/scss/bootstrap.scss";
+
+/*
+COMMON
+ */
+@import "../common/index";
+
+/*
+Components
+ */
+@import "elements/layouts";
+@import "elements/off-canvas";
+@import "elements/topbar";
+@import "elements/form";
+@import "elements/lists";
+@import "elements/tag-input";
+@import "elements/media";
+@import "elements/dropzone";
+@import "elements/wysiwyg";
+@import "elements/avatar";
+@import "elements/fullscreen";
+@import "elements/modals";
+
+//@import "~trix/dist/trix.css";

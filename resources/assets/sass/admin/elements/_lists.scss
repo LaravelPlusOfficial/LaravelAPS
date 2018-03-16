@@ -1,0 +1,41 @@
+.tree-ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  ul {
+    border-left: 1px dashed $gray-600;
+    list-style: none;
+    padding: 0 0 0 25px;
+    margin-left: 8px;
+
+    > li {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 13px;
+        left: -24px;
+        width: 20px;
+        height: 1px;
+        border-top: 1px dashed $gray-600;
+      }
+    }
+
+  }
+
+  &.max-ht-400 {
+    max-height: 400px;
+    overflow: auto;
+  }
+
+  &.max-ht-1200 {
+    max-height: 1200px;
+    overflow: auto;
+  }
+
+}

@@ -1,0 +1,112 @@
+.navbar-gray {
+
+  .nav-link {
+    color: $gray-700;
+    transition: color 200ms ease-in-out;
+
+    &:hover, &:focus {
+      color: black;
+    }
+  }
+
+}
+
+.navbar {
+
+  &.bg-opaque {
+    background: rgba(255,255,255, 0.8);
+  }
+
+}
+
+.app-side-menu {
+
+  .nav-link {
+    color: white !important;
+    text-align: left !important;
+    justify-content: flex-start;
+
+    svg {
+      fill: white !important;
+    }
+
+    &:hover, &:focus {
+      color: white !important;
+
+      svg {
+        fill: white !important;
+      }
+
+    }
+
+  }
+
+  .hide-on-side {
+    display: none;
+  }
+
+}
+
+.main-menu-search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  background: $primary;
+  height: 66px;
+  margin-top: -66px;
+  display: none;
+  transition: all 150ms cubic-bezier(0.840, 0.045, 1.000, 0.750);
+
+  @include media-breakpoint-up('lg') {
+    display: block;
+
+    &.open {
+      margin-top: 0;
+    }
+  }
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    height: 66px;
+
+    input {
+      display: flex;
+      flex: 1;
+      height: 66px;
+      border: none;
+      background: transparent;
+      padding: 0 ($grid-gutter-width / 2);
+      line-height: 66px;
+      font-size: 1.4rem;
+      outline: none;
+
+      &:focus {
+        color: white;
+      }
+
+      &::placeholder {
+        color: darken($primary, 15%);
+      }
+    }
+
+    button {
+      height: 66px;
+      border: none;
+      background: transparent;
+      padding: 0 20px;
+      fill: white;
+      cursor: pointer;
+      outline: none;
+      transition: all 200ms ease-in-out;
+
+      &:hover, &:focus, &:active {
+        background: darken($primary, 10%);
+      }
+    }
+
+  }
+
+}

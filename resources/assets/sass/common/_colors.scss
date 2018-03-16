@@ -1,0 +1,71 @@
+@each $item, $color in $colors {
+
+  // Color
+  .c-#{$item} {
+    color: $color !important;
+  }
+
+  .c-#{$item}-hv {
+    &:hover, &:focus {
+      color: $color !important;
+    }
+  }
+
+  // background
+  .bgc-#{$item} {
+    background-color: $color;
+  }
+
+  .bgc-#{$item}-hv {
+    &:hover, &:focus {
+      background-color: $color;
+    }
+  }
+
+  // Border Color
+  .bdc-#{$item} {
+    border-color: $color;
+  }
+
+  .bdc-#{$item}-hv {
+    &:hover, &:focus {
+      border-color: $color;
+    }
+  }
+
+  // Border Color
+  .fill-#{$item} {
+    fill: $color;
+  }
+
+  .fill-#{$item}-hv {
+    &:hover, &:focus {
+      fill: $color;
+    }
+  }
+
+  // Border Color
+  .str-#{$item} {
+    stroke: $color;
+  }
+
+  .str-#{$item}-hv {
+    &:hover, &:focus {
+      stroke: $color;
+    }
+  }
+
+}
+
+// Opaque
+.bg-opaque {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.bg-opaque-dark {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.bg-opaque-light {
+  background: rgba(255, 255, 255, 0.3);
+}

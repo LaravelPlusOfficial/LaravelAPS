@@ -1,0 +1,20 @@
+trix-editor {
+
+  &.comment-form {
+    min-height: 10rem;
+  }
+
+  pre {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    //font-family: monospace;
+    //font-size: 0.9em;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    white-space: pre;
+    background-color: #eee;
+    overflow-x: auto;
+  }
+
+}

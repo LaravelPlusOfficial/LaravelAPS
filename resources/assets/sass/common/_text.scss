@@ -1,0 +1,159 @@
+// ---------------------------------------------------------
+// @TOC
+// ---------------------------------------------------------
+
+// + @Text Align
+// + @Text Transform
+// + @Font Style
+// + @Text Decoration
+// + @White Space
+// + @Word Break
+// + @Word Wrap
+// + @Text Overflow
+// + @Font Size
+// + @Font Weight
+// + @Line Height
+
+// ---------------------------------------------------------
+// @Text Align
+// ---------------------------------------------------------
+
+.ta-c { text-align : center; }
+
+.ta-l { text-align : left; }
+
+.ta-r { text-align : right; }
+
+// ---------------------------------------------------------
+// @Text Transform
+// ---------------------------------------------------------
+
+.tt-n { text-transform : none; }
+
+.tt-u { text-transform : uppercase; }
+
+.tt-l { text-transform : lowercase; }
+
+.tt-c { text-transform : capitalize; }
+
+// ---------------------------------------------------------
+// @Font Style
+// ---------------------------------------------------------
+
+.fs-i { font-style : italic; }
+
+.fs-o { font-style : oblique; }
+
+// ---------------------------------------------------------
+// @Text Decoration
+// ---------------------------------------------------------
+
+.td-n { text-decoration : none; }
+
+.td-o { text-decoration : overline; }
+
+.td-lt { text-decoration : line-through; }
+
+.td-u { text-decoration : underline; }
+
+// ---------------------------------------------------------
+// @White Space
+// ---------------------------------------------------------
+
+.whs-nw { white-space : nowrap; }
+
+.whs-p { white-space : pre; }
+
+.whs-n { white-space : normal; }
+
+// ---------------------------------------------------------
+// @Word Break
+// ---------------------------------------------------------
+
+.wob-n { word-break : normal; }
+
+.wob-ba { word-break : break-all; }
+
+.wob-k { word-break : keep-all; }
+
+// ---------------------------------------------------------
+// @Word Wrap
+// ---------------------------------------------------------
+
+.wow-bw { word-wrap : break-word; }
+
+.wow-n { word-wrap : normal; }
+
+// ---------------------------------------------------------
+// @Text Overflow
+// ---------------------------------------------------------
+
+.tov-e { text-overflow : ellipsis; }
+
+// ---------------------------------------------------------
+// @Font Size
+// ---------------------------------------------------------
+
+.fsz-xxs { font-size : 0.50rem !important;  }
+
+.fsz-xs { font-size : 0.75rem !important;  }
+
+.fsz-sm { font-size : 0.87rem !important;  }
+
+.fsz-def { font-size : 1rem !important;  }
+
+.fsz-md { font-size : 1.15rem !important;  }
+
+.fsz-lg { font-size : 1.4rem !important;  }
+
+.fsz-xl { font-size : 1.7rem !important;  }
+
+// ---------------------------------------------------------
+// @Font Weight
+// ---------------------------------------------------------
+
+.fw-100 { font-weight : 100 !important; }
+
+.fw-200 { font-weight : 200 !important; }
+
+.fw-300 { font-weight : 300 !important; }
+
+.fw-400 { font-weight : 400 !important; }
+
+.fw-500 { font-weight : 500 !important; }
+
+.fw-600 { font-weight : 600 !important; }
+
+.fw-700 { font-weight : 700 !important; }
+
+.fw-800 { font-weight : 800 !important; }
+
+.fw-900 { font-weight : 900 !important; }
+
+// ---------------------------------------------------------
+// @Line Height
+// ---------------------------------------------------------
+
+.lh-0 { line-height : 0; }
+
+.lh-1 { line-height : 1; }
+
+.lh-1\.5 { line-height : 1.5; }
+
+.lh-2 { line-height : 2; }
+
+.lh-2\.5 { line-height : 2.5; }
+
+.lh-3 { line-height : 3; }
+
+// ---------------------------------------------------------
+// @Letter Spacing
+// ---------------------------------------------------------
+
+.ls-11 { letter-spacing : 1.1px;}
+
+.ls-12 { letter-spacing : 1.2px;}
+
+.ls-14 { letter-spacing : 1.4px;}
+
+.ls-16 { letter-spacing : 1.6px;}

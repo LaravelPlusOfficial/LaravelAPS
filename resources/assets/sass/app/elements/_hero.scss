@@ -1,0 +1,19 @@
+//.hero {}
+
+.hero-welcome {
+  //background: url(/site/defaults/welcome-hero-background.jpg?id=c39692a…) no-repeat center center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.hero-content {
+  padding: 70px 60px;
+  margin: 50px 0;
+
+  &.bg-opaque {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+  }
+
+}

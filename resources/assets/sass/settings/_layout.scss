@@ -1,0 +1,21 @@
+/*
+Off Canvas
+ */
+$off-canvas-width : 230px;
+$navbar-height: 56px;
+$container-fluid-max-width: 1140px;
+
+$spacer : 1rem;
+$spacers : (
+        0: 0,
+        1: ($spacer * .25),
+        2: ($spacer * .5),
+        3: $spacer,
+        4: ($spacer * 1.5),
+        5: ($spacer * 3),
+        6: ($spacer * 3.5),
+        7: ($spacer * 4),
+        8: ($spacer * 4.5),
+        9: ($spacer * 5),
+        10: ($spacer * 5.5)
+);

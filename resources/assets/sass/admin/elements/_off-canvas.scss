@@ -1,0 +1,113 @@
+.off-canvas {
+  z-index: $zindex-fixed;
+  width: $off-canvas-width;
+  padding: 0 10px 10px 10px;
+  height: 100%;
+  overflow: hidden;
+  //margin-left: -230px;
+  transition: all 200ms ease-in-out;
+
+  .logo-small {
+    display: none;
+  }
+
+  .close-switch {
+    display: none;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-left: -$off-canvas-width;
+
+    &.open {
+      margin-left: 0;
+    }
+
+    .logo-lg {
+      display: none;
+    }
+
+    .logo-small {
+      display: flex;
+    }
+
+    .close-switch {
+      display: flex;
+    }
+  }
+
+}
+
+.off-canvas-content {
+  position: relative;
+  height: 100%;
+  max-height: 100%;
+  padding-bottom: 400px;
+  overflow-y: auto;
+}
+
+.off-canvas-nav {
+  position: relative;
+  display: block;
+
+  a {
+    transition: background-color 200ms ease-in-out;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    border-radius: $border-radius;
+
+    &:hover, &:focus {
+      //background: rgba(255, 255, 255, 0.3) !important;
+      background: rgba(255, 255, 255, 0.3) !important;
+      text-decoration: none;
+    }
+
+  }
+
+  li {
+    display: block;
+
+    &.is-active {
+
+      > a {
+        //background: darken($primary, 15%);
+        color: $yellow;
+        fill: $yellow;
+      }
+
+    }
+
+    a {
+      color: white;
+    }
+
+  }
+
+}
+
+.off-canvas-nav {
+
+  ul {
+    padding-left: 33px;
+
+    li {
+      display: block;
+
+      a {
+        display: block;
+        padding: 5px;
+        font-size: 0.8rem;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+
+        &:hover, &:focus {
+          //background: darken($primary, 9%);
+          background: rgba(255, 255, 255, 0.3);
+          text-decoration: none;
+        }
+      }
+
+    }
+
+  }
+
+}

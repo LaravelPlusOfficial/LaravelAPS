@@ -1,0 +1,83 @@
+.v-spinner
+{
+  text-align: center;
+}
+
+
+@-webkit-keyframes v-scaleStretchDelay
+{
+  0%,
+  100%
+  {
+    transform: scaleY(1);
+  }
+  50%
+  {
+    transform: scaleY(0.4);
+  }
+}
+
+@keyframes v-scaleStretchDelay
+{
+  0%,
+  100%
+  {
+    transform: scaleY(1);
+  }
+  50%
+  {
+    transform: scaleY(0.4);
+  }
+}
+
+.loader, .loading {
+  position: relative;
+  color: transparent;
+
+  &:hover, &:focus {
+    color: transparent;
+  }
+}
+
+.loader-dark, .loading-dark {
+  position: relative;
+  color: transparent;
+
+  &:hover, &:focus {
+    color: transparent;
+  }
+
+  &:after {
+    border-color: $primary;
+  }
+
+}
+
+.loader:after {
+  animation: spinAround 500ms infinite linear;
+  border: 2px solid White;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: "";
+  display: block;
+  width: 1em;
+  border-radius: 1em;
+  height: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+}
+
+@keyframes spinAround {
+
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(359deg)
+  }
+  
+}

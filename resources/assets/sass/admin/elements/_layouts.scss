@@ -1,0 +1,45 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &.overflow-hidden {
+    overflow: hidden;
+  }
+}
+
+.admin {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  z-index: 1;
+}
+
+.topbar {
+  height: $navbar-height;
+}
+
+.main {
+  padding-left: $off-canvas-width;
+  transition: all 200ms ease-in-out;
+}
+
+@include media-breakpoint-down(md) {
+  .main {
+    padding-left: 0;
+  }
+
+  .topbar {
+    padding-left: 0;
+  }
+}
+
+[v-cloak] {
+  display: none;
+}
