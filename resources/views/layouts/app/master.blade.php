@@ -4,9 +4,10 @@
 @include('layouts.common.head-meta')
 
 <!--- Styles --->
+	@stack('prepend-head-styles')
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
 	<link rel="stylesheet" href="{{ mix('/css/app.css') }}">
-@stack('head-styles')
+	@stack('head-styles')
 
 <!--- Javascript vars from php --->
 	<script>{!! $javascripVars !!}</script>

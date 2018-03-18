@@ -1,10 +1,10 @@
 <section class="off-canvas p-fx tlb-0 bg-primary z-fixed-1 grad-primary-v" ref="offCanvasMenu" v-touch.swipeleft="toggleOffCanvas">
 	
-	<div class="off-canvas-overlay" @click="toggleOffCanvas()"></div>
+	<div class="off-canvas-overlay hide-above-lg" @click="toggleOffCanvas()"></div>
 	
 	<div class="off-canvas-content">
 		
-		<!--- Logo --->
+		<!-- Logo -->
 		<div class="off-canvas-logo d-f ac-c jc-sb ai-c">
 			<a href="/" class="d-f jc-c ac-c ai-c">
 				<vue-svg name="lp-logo-small-white" width="60" height="30"></vue-svg>
@@ -14,7 +14,7 @@
 			</a>
 		</div>
 		
-		<!--- Search --->
+		<!-- Search -->
 		<div class="off-canvas-search pt-4 pb-4 d-flex" itemscope itemtype="http://schema.org/WebSite">
 			<link itemprop="url" href="{{ url('/') }}"/>
 			
@@ -38,7 +38,7 @@
 		
 		</div>
 		
-		<!--- Menu --->
+		<!-- Menu -->
 		<ul class="nav flex-column off-canvas-nav mt-3 app-side-menu">
 			
 			@include('layouts.app.off-canvas-menu', ['items' => $mainMenuOffCanvas->roots()])

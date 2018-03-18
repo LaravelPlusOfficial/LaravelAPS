@@ -186,6 +186,7 @@ class PostRequest extends FormRequest
     {
         return [
             'title'             => 'required',
+            'table_of_content'  => 'nullable',
             'tags'              => 'array',
             'tags.*'            => 'exists:tags,id',
             'publish_at'        => 'nullable|date_format:"Y-m-d H:i:s"',
@@ -220,7 +221,8 @@ class PostRequest extends FormRequest
             'excerpt',
             'publish_at',
             'featured_image_id',
-            'post_type'
+            'post_type',
+            'table_of_content'
         ]), $fields);
     }
 

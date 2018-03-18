@@ -124,6 +124,8 @@
 								
 								<wysiwyg name="body"
 								         v-model="post.body"
+								         @toc-updated="tocUpdated($event)"
+								         :data-toc="post.table_of_content"
 								         placeholder="Write some thing cool...">
 								</wysiwyg>
 								

@@ -8,7 +8,7 @@
 	
 	<main class="main">
 		
-		<!--- Posts --->
+		<!-- Posts -->
 		<section class="posts">
 			
 			<div class="container-fluid mt-5 mb-5 pt-4 pb-5">
@@ -19,12 +19,12 @@
 					<div class="col-lg-12">
 						<div class="card" style="width: 100%">
 							
-							<!--- Featured Image --->
+							<!-- Featured Image -->
 							<img class="card-img-top" src="{{ featuredImage($post) }}" alt="{{ $post->title }}">
 							
 							<div class="card-body">
 								
-								<!--- Post Title --->
+								<!-- Post Title -->
 								<h1 class="card-title h2 mb-2 pl-4 pr-4">{{ $post->title }}</h1>
 								
 								
@@ -39,7 +39,7 @@
 									<div class="divider fs-12 txt-up ls-14 d-flex align-items-center ml-1 mr-1">/</div>
 									
 									
-									<!--- Categories Taxonomy --->
+									<!-- Categories Taxonomy -->
 									@if($post->category)
 										<div class="d-f ai-c">
 											<vue-svg name="icon-folder" square="16"
@@ -54,11 +54,24 @@
 								
 								</div>
 								
+								
 								<div class="card-text mb-3 post-body-wrap pl-4 pr-4">
+									
+									@if($post->table_of_content)
+										<div class="d-f jc-fe">
+											<div class="post-toc d-inline-block bdr-5">
+												<p class="label bdB pb-1 fsz-sm tt-u ls-11">Table of content</p>
+												{!! $post->table_of_content !!}
+											</div>
+										</div>
+									@endif
+									
 									{!! $post->body !!}
+								
+								
 								</div>
 								
-								<!--- Tags Taxonomy --->
+								<!-- Tags Taxonomy -->
 								@if($post->tags->count())
 									<div class="d-f ai-c pl-4 pr-4 mt-4">
 										<vue-svg name="icon-tag" square="16" classes="mr-1 fill-primary"></vue-svg>
@@ -77,7 +90,7 @@
 							
 							</div>
 							
-							<!--- Footer --->
+							<!-- Footer -->
 							<div class="card-footer">
 								
 								<div class="d-flex mb-3 jc-sb ai-c fxd-xs-c">
@@ -153,8 +166,8 @@
 										
 										<social-share url="{{ urlencode(Request::fullUrl()) }}"
 										              title="{{ isset($seoTitle) ? urlencode($seoTitle) : urlencode($post->title) }}"
-										              twitter-username="{{ config('aps.seo.twitter.site_username') }}"
-										              {{--hashtags="{{ urlencode('one,two') }}"--}}
+										              twitter-username="{{ setting('twitter_site_username') }}"
+														{{--hashtags="{{ urlencode('one,two') }}"--}}
 										></social-share>
 									
 									</div>
@@ -204,5 +217,5 @@
 @endsection
 
 @push('footer-scripts-append')
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
+	<script src="{{ mix('js/run_prettify.js') }}"></script>
 @endpush

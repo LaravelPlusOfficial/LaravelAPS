@@ -13811,6 +13811,41 @@ trix-editor pre {
   margin-bottom: 5px;
 }
 
+.post-toc {
+  background: #e9ecef;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.post-toc .toc {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+}
+
+.post-toc .toc > li a {
+  font-weight: bold;
+  font-size: 1.25rem !important;
+}
+
+.post-toc .toc ol {
+  list-style: none;
+}
+
+.post-toc .toc li a {
+  display: inline-block;
+  padding: 3px 0 3px 0;
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+}
+
+.post-toc .toc li a:before {
+  content: '#';
+  color: #f399c2;
+  margin-right: 5px;
+}
+
 /* desert scheme ported from vim to google prettify */
 
 pre.prettyprint {

@@ -13,8 +13,8 @@ class UsersTableSeeder extends Seeder
     {
         $admin = factory(\App\Models\User::class)
             ->create([
-                'name'           => 'admin',
-                'email'          => 'admin@example.com',
+                'name'           => 'gurinder',
+                'email'          => 'gurinder@gmail.com',
                 'password'       => Illuminate\Support\Facades\Hash::make('password'),
                 'email_verified' => true
             ]);

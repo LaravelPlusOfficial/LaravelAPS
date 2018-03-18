@@ -3,6 +3,51 @@
     <div class="p-rel" :class="{ 'fullscreen-able' : fullscreen }">
 
         <button type="button"
+                @click.prevent="showToc = !showToc"
+                class="bg-n bd-n p-0 m-0 lh-1 fsz-sm p-ab r-0 fill-gray fill-primary-hv fullscreen-btn otl-n-fc cur-p"
+                style="top: -25px; right: 40px">
+            <vue-svg name="icon-list-numbered" square="20"></vue-svg>
+        </button>
+
+        <!-- Table of content -->
+        <scale-transition origin="top right">
+            <div class="p-ab r-0 bgc-gray-light z-popover bdr-10 p-3 d-f fxd-c jc-fs"
+                 v-show="showToc"
+                 style="top: 0; right: 40px; width: 400px; min-height: 400px;">
+
+                <h3 class="label bdB pt-2 pb-3">Table of content</h3>
+
+                <div class="toc-wrap" v-html="toc ? toc : '<p>Nothing to show</p>'">
+
+                </div>
+
+                <div class="d-f jc-fe ai-c ac-c bdT pt-3" style="margin-top: auto">
+
+                    <button type="button"
+                            @click="refreshToc(true)"
+                            class="bg-n bd-n p-0 m-0 lh-1 fsz-sm fill-gray fill-primary-hv fullscreen-btn otl-n-fc cur-p">
+                        <vue-svg name="icon-delete" square="20"></vue-svg>
+                    </button>
+
+                    <button type="button"
+                            @click="refreshToc()"
+                            class="bg-n bd-n p-0 m-0 lh-1 fsz-sm fill-gray fill-primary-hv fullscreen-btn otl-n-fc cur-p mr-3 ml-3
+">
+                        <vue-svg name="icon-refresh" square="20"></vue-svg>
+                    </button>
+
+                    <button type="button"
+                            @click="showToc = ! showToc"
+                            class="bg-n bd-n p-0 m-0 lh-1 fsz-sm fill-gray fill-primary-hv fullscreen-btn otl-n-fc cur-p">
+                        <vue-svg name="icon-x" square="20"></vue-svg>
+                    </button>
+
+                </div>
+
+            </div>
+        </scale-transition>
+
+        <button type="button"
                 @click.prevent="fullscreen = !fullscreen"
                 class="bg-n bd-n p-0 m-0 lh-1 fsz-sm p-ab r-0 fill-gray fill-primary-hv fullscreen-btn otl-n-fc cur-p"
                 style="top: -25px">
@@ -53,6 +98,7 @@
                     <button type="button"
                             id="code-close"
                             ref="codeClose"
+                            @click="closeCodeModel()"
                             class="btn btn-sm btn-secondary fsz-sm ls-12 tt-u">Close
                     </button>
                     <button type="button"
@@ -73,11 +119,18 @@
 <script>
     import Utils from "../../common/Utils";
     import Code from './medium-insert-code-extension'
+    import TocLevel from './medium-insert-table-of-content-extension'
+    import {ScaleTransition} from 'vue2-transitions'
+    import MakeToc from './make-toc'
 
     export default {
         name: "wysiwyg-medium",
 
-        props: ["name", "value", "placeholder"],
+        props: ["name", "value", "placeholder", 'dataToc'],
+
+        components: {
+            ScaleTransition
+        },
 
         data() {
             return {
@@ -90,13 +143,16 @@
                 fullscreen: false,
                 language: 'php',
                 code: null,
-                core: null
+                core: null,
+                showToc: false,
+                toc: null
             }
         },
 
         mounted() {
 
             Event.listen('mediumEditorLoaded', () => {
+                this.toc = this.dataToc;
                 this.registerPlugin()
                 this.init()
             })
@@ -200,10 +256,23 @@
                             },
                         },
                         code: {},
+                        tocLevelTwo: {
+                            'level': 'two'
+                        },
+                        tocLevelThree: {
+                            'level': 'three'
+                        },
+                        tocLevelFour: {
+                            'level': 'four'
+                        },
+                        tocLevelFive: {
+                            'level': 'five'
+                        },
+                        tocLevelSix: {
+                            'level': 'six'
+                        }
                     }
                 });
-
-                //this.core = plugin_mediumInsert
 
             },
 
@@ -224,6 +293,7 @@
                         let value = allContents[this.editorId].value
 
                         this.$emit('input', value)
+
                     }
 
                 });
@@ -236,26 +306,28 @@
                 window.$.fn['mediumInsertCode'] = function (options) {
                     return this.each(function () {
                         if (!$.data(this, 'plugin_mediumInsertCode')) {
-
-                            $.data(
-                                this,
-                                'plugin_mediumInsertCode',
-                                new Code(
-                                    this,
-                                    options,
-                                    self
-                                )
+                            $.data(this, 'plugin_mediumInsertCode',
+                                new Code(this, options, self)
                             );
-
                             self.core = $(this).data('plugin_mediumInsert');
-
                         }
                     });
-
                 };
-            },
 
-            codeModelOpening() {
+                let tocLevels = ['Two', 'Three', 'Four', 'Five', 'Six'];
+
+                tocLevels.forEach(tocLevel => {
+                    window.$.fn[`mediumInsertTocLevel${tocLevel}`] = function (options) {
+                        return this.each(function () {
+                            if (!$.data(this, `plugin_mediumInsertTocLevel${tocLevel}`)) {
+                                $.data(this, `plugin_mediumInsertTocLevel${tocLevel}`,
+                                    new TocLevel(this, options, self)
+                                );
+                                self.core = $(this).data('plugin_mediumInsert');
+                            }
+                        });
+                    };
+                })
 
             },
 
@@ -271,15 +343,14 @@
 
                     html = this.$normalizeWhitespace().normalize(html);
 
-                    html = this.htmlEntities(html)
+                    //html = this.htmlEntities(html)
+                    html = Utils.htmlEntities(html)
 
                     console.log(html)
 
                     lang = lang ? lang : 'html';
 
                     let pre = $('<pre />').addClass('prettyprint').addClass(`lang-${lang}`)
-
-                    //html = $('<pre />').attr('data-language', lang ? lang : 'html').html(html)
 
                     html = $(pre).html(html)
 
@@ -299,23 +370,54 @@
                 }
 
                 this.core.hideButtons();
-
-
-                // let code = this.$refs.codeTextarea.value
-                //
-                // console.log(code)
-                //
-                // this.$refs.codeTextarea.value = null
-                //
-
-                // // let code = '<pre><code>' + this.code + '</code></pre>'
-                //
-                // this.editor.pasteHTML(`${code}`)
             },
 
-            htmlEntities(str) {
-                return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-            }
+            codeModelOpening() {
+                this.core.hideButtons();
+            },
+
+            closeCodeModel() {
+                this.core.hideButtons();
+                this.$modal.hide('get-code-for-wysiwyg')
+            },
+
+            refreshToc(remove = false) {
+
+                if (remove) {
+
+                    this.toc = null
+
+                } else {
+
+                    let tocMaker = new MakeToc
+
+                    let content = this.editor.getContent();
+
+                    let html = (new DOMParser()).parseFromString(content, "text/html");
+
+                    let hTags = 'h2,h3,h4,h5,h6';
+                    
+                    let headers = html.querySelectorAll(hTags);
+
+                    headers.forEach(h => h.id = Utils.slugify(h.textContent));
+
+                    this.editor.setContent(html.body.innerHTML)
+
+                    let toc = tocMaker.for(headers)
+
+                    this.toc = toc ? toc.outerHTML : null
+
+                }
+
+                let data = {
+                    toc: this.toc
+                }
+
+                this.showToc = false
+
+                this.$nextTick(() => this.$emit('toc-updated', data))
+
+            },
         }
     }
 </script>

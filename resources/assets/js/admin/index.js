@@ -6,10 +6,6 @@ require('../common/VuePrototypes')
 
 require('../common/VueMixins')
 
-import VueScrollTo from 'vue-scrollto'
-
-Vue.use(VueScrollTo)
-
 import Directives from '../common/directives/index'
 
 Vue.use(Directives)

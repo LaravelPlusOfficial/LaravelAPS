@@ -22,6 +22,10 @@ mix
     // Medium editor Admin
     .copy('data/js/medium-editor.js', 'public/js')
 
+    // Google code pretify
+    .copy('data/js/google-code-prettify/run_prettify.js', 'public/js')
+    .copy('data/js/google-code-prettify/prettify.css', 'public/js')
+
     // Copy Favicons
     .copy('data/favicons/apple-touch-icon.png', 'public/favicons')
     .copy('data/favicons/favicon.png', 'public/favicons')

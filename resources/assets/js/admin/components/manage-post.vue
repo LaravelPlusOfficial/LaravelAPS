@@ -26,6 +26,7 @@
                     slug: null,
                     body: null,
                     excerpt: null,
+                    table_of_content: null,
                     post_type: this.postType,
                     post_format: this.postData ? this.postData.post_format : 'standard',
                     publish_at: null,
@@ -187,19 +188,23 @@
 
             republishingToSocialProvider(provider) {
                 this.republishingToSocial = true
-                
+
                 let url = this.republishToSocialMediaUrl.replace('%postId%', this.post.id)
                 url = url.replace('%provider%', provider)
 
                 axios.patch(url, {})
-                    .then( response  => {
+                    .then(response => {
                         this.republishingToSocial = false
                         flash(`Posted to ${provider}`)
                     })
                     .catch(err => {
-                        this.republishingToSocial =  false
+                        this.republishingToSocial = false
                         console.log(err)
                     })
+            },
+
+            tocUpdated(data) {
+                this.post.table_of_content = data.toc;
             }
 
         }

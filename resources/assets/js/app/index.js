@@ -2,13 +2,12 @@ require('./bootstrap')
 
 require('../common/VueFilters')
 
-import VueScrollTo from 'vue-scrollto'
-Vue.use(VueScrollTo)
-
 import Directives from '../common/directives/index'
+
 Vue.use(Directives)
 
 import VueMatchHeights from 'vue-match-heights';
+
 Vue.use(VueMatchHeights);
 
 Vue.component('social-share', require('../common/components/social-share'))
@@ -31,6 +30,8 @@ Vue.component('comments', require('./components/comment-system/comments'))
 Vue.component('comment', require('./components/comment-system/comment'))
 Vue.component('comment-reply', require('./components/comment-system/comment-reply'))
 
+import SmoothScroll from 'smooth-scroll'
+
 const vueApp = new Vue({
     el: '#app',
 
@@ -38,7 +39,15 @@ const vueApp = new Vue({
         search: false
     },
 
+    mounted() {
+        this.init()
+    },
+
     methods: {
+
+        init() {
+            new SmoothScroll('a[data-scroll="smooth-scroll"]');
+        },
 
         toggleOffCanvas() {
             let opened = this.$refs.offCanvasMenu.classList.toggle('open')

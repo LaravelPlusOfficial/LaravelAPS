@@ -145,6 +145,9 @@
     import Form from '../../../common/Form';
     import Util from "../../../common/Utils";
     import axios from 'axios'
+    import SmoothScroll from 'smooth-scroll'
+
+    const scrollTo = new SmoothScroll();
 
     export default {
         name: "comment",
@@ -173,7 +176,7 @@
         computed: {
 
             showEditToolset() {
-                if ( (!this.editing && !this.replying && !this.deleting) && (this.comment.status !== 'spam') ) {
+                if ((!this.editing && !this.replying && !this.deleting) && (this.comment.status !== 'spam')) {
                     return true;
                 }
 
@@ -237,7 +240,7 @@
                 this.$nextTick(() => {
 
                     if (`comment-${this.comment.id}` === Util.getQueryString('go-to')) {
-                        this.$scrollTo(this.$el)
+                        scrollTo.animateScroll(this.$el)
                     }
 
                 })

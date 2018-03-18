@@ -14764,3 +14764,41 @@ body.ovf-h {
   z-index: 1050 !important;
 }
 
+.toc-wrap {
+  max-height: 300px;
+  padding: 0 20px 0 20px;
+  overflow: auto;
+}
+
+.toc {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+}
+
+.toc > li a {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.toc ol {
+  position: relative;
+  padding: 0 0 0 30px;
+  list-style: none;
+  margin: 5px 0 5px 0;
+}
+
+.toc li a {
+  display: inline-block;
+  padding: 3px 0 3px 0;
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+}
+
+.toc li a:before {
+  content: '#';
+  color: #f399c2;
+  margin-right: 5px;
+}
+
