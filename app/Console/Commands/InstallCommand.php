@@ -286,6 +286,10 @@ class InstallCommand extends Command
      */
     protected function migrateDatabase($vars = null)
     {
+        if (!$this->confirm('Do you need database setup help?', true)) {
+            return;
+        }
+
         $credentials = array_only($vars ?? $this->dbVars, [
             'DB_DATABASE',
             'DB_PORT',
@@ -322,6 +326,10 @@ class InstallCommand extends Command
      */
     protected function createAdmin()
     {
+        if (!$this->hasUsersTable()) {
+            return;
+        }
+
         $adminDetails = $this->getAdminDetail();
 
         if ($this->isMissingAdminDetail($adminDetails)) {
@@ -515,7 +523,7 @@ class InstallCommand extends Command
     protected function checkIfAppInProduction()
     {
         try {
-            if (Schema::hasTable('users')) {
+            if ($this->hasUsersTable()) {
                 return App::environment() == 'production';
             }
         } catch (\Exception $e) {
@@ -523,6 +531,17 @@ class InstallCommand extends Command
         }
 
         return true;
+    }
+
+    protected function hasUsersTable()
+    {
+        try {
+            if (Schema::hasTable('users')) {
+                return true;
+            }
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 
     /**

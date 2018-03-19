@@ -11,15 +11,15 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $admin = factory(\App\Models\User::class)
-            ->create([
-                'name'           => 'gurinder',
-                'email'          => 'gurinder@gmail.com',
-                'password'       => Illuminate\Support\Facades\Hash::make('password'),
-                'email_verified' => true
-            ]);
+        // $admin = factory(\App\Models\User::class)
+        //     ->create([
+        //         'name'           => 'gurinder',
+        //         'email'          => 'gurinder@gmail.com',
+        //         'password'       => Illuminate\Support\Facades\Hash::make('password'),
+        //         'email_verified' => true
+        //     ]);
 
-        $this->makeAdminTrulyAdmin($admin);
+        // $this->makeAdminTrulyAdmin($admin);
 
     }
 

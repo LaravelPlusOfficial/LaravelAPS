@@ -17,13 +17,13 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AccessControlTableSeeder::class);
 
-        $this->call(TaxonomiesTableSeeder::class);
+        // $this->call(TaxonomiesTableSeeder::class);
 
-        $this->call(UsersTableSeeder::class);
+        // $this->call(UsersTableSeeder::class);
 
-        $this->call(PagesTableSeeder::class);
+        // $this->call(PagesTableSeeder::class);
 
-        $this->call(PostsTableSeeder::class);
+        // $this->call(PostsTableSeeder::class);
 
         //$this->call(CommentsTableSeeder::class);
     }
