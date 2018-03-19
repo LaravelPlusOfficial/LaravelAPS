@@ -2,14 +2,14 @@ let mix = require('laravel-mix');
 let path = require('path');
 let webpack = require('webpack');
 
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
  |--------------------------------------------------------------------------
  */
-
 mix
-    // APP
+// APP
     .js('resources/assets/js/app/index.js', 'public/js/app.js')
     .sass('resources/assets/sass/app/index.scss', 'public/css/app.css')
 
@@ -27,46 +27,41 @@ mix
     .copy('data/js/google-code-prettify/prettify.css', 'public/js')
 
     // Copy Favicons
+    .copy('data/favicons/android-chrome-192x192.png', 'public/favicons')
+    .copy('data/favicons/android-chrome-512x512.png', 'public/favicons')
     .copy('data/favicons/apple-touch-icon.png', 'public/favicons')
+    .copy('data/favicons/browserconfig.xml', 'public/favicons')
     .copy('data/favicons/favicon.png', 'public/favicons')
     .copy('data/favicons/favicon-16x16.png', 'public/favicons')
     .copy('data/favicons/favicon-32x32.png', 'public/favicons')
     .copy('data/favicons/favicon-48x48.png', 'public/favicons')
-    .copy('data/favicons/mstile-150x150.png', 'public/favicons')
-    .copy('data/favicons/safari-pinned-tab.svg', 'public/favicons')
-    .copy('data/favicons/android-chrome-192x192.png', 'public/favicons')
-    .copy('data/favicons/android-chrome-512x512.png', 'public/favicons')
     .copy('data/favicons/manifest.json', 'public/favicons')
+    .copy('data/favicons/mstile-70x70.png', 'public/favicons')
+    .copy('data/favicons/mstile-150x150.png', 'public/favicons')
+    .copy('data/favicons/mstile-310x150.png', 'public/favicons')
+    .copy('data/favicons/mstile-310x310.png', 'public/favicons')
+    .copy('data/favicons/safari-pinned-tab.svg', 'public/favicons')
 
     .copy('data/defaults/**/*', 'public/site/defaults')
-
-    // Copy msaplication config
-    .copy('data/favicons/browserconfig.xml', 'public/favicons')
-
 
     .sourceMaps()
     .version()
     .then((stats) => {
-
-        let manifest = require('./public/mix-manifest.json')
-
-        let androidChrome192, androidChrome512
-
-        let assets = stats.compilation.assets
+        let manifest = require('./public/mix-manifest.json');
+        let androidChrome192, androidChrome512;
+        let assets = stats.compilation.assets;
 
         for (const key in assets) {
-
-            if (key == '/favicons/android-chrome-192x192.png') {
+            if (key === '/favicons/android-chrome-192x192.png') {
                 androidChrome192 = manifest[key]
             }
-
-            if (key == '/favicons/android-chrome-512x512.png') {
+            if (key === '/favicons/android-chrome-512x512.png') {
                 androidChrome512 = manifest[key]
             }
         }
 
         let data = {
-            "name": "Laravel Plus",
+            "name": "LaravelAPS",
             "icons": [
                 {
                     "src": androidChrome192,
@@ -97,10 +92,9 @@ mix
         })
 
     })
-    .browserSync({
-        proxy: 'laravelaps.test',
-        host: 'laravelaps.test',
-        notify: true,
-        port: 8000
-    })
-
+    // .browserSync({
+    //     proxy: 'laravelaps.test',
+    //     host: 'laravelaps.test',
+    //     notify: true,
+    //     port: 8000
+    // });

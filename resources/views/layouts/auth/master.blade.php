@@ -14,9 +14,7 @@
 <body>
 
 <div id="app" class="app @yield('app-class')">
-
     @yield('content')
-
 </div>
 
 @stack('footer-scripts-prepend')

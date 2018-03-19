@@ -13444,6 +13444,23 @@ body.overflow-hidden {
   }
 }
 
+.off-canvas-overlay {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin-left: -100%;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1030;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+body.off-canvas-open-left .off-canvas-overlay {
+  margin-left: 230px;
+}
+
 .off-canvas-content {
   position: relative;
   height: 100%;

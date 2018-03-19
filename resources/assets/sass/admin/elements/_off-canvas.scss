@@ -37,6 +37,25 @@
 
 }
 
+.off-canvas-overlay {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin-left: -100%;
+  bottom: 0;
+  background: rgba(0,0,0,0.2);
+  //background: rgba(255,255,255,0.4);
+  z-index: $zindex-fixed;
+  transition: all 200ms ease-in-out;
+}
+
+body.off-canvas-open-left {
+  .off-canvas-overlay {
+    margin-left: $off-canvas-width;
+  }
+}
+
 .off-canvas-content {
   position: relative;
   height: 100%;

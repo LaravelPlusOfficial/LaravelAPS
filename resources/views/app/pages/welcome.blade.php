@@ -15,7 +15,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="hero-content bg-opaque">
-							<h1 class="tt-u ls-12 ta-c">
+							<h1 class="ls-12 ta-c">
 								{!! setting('site_welcome_hero_title') !!}
 							</h1>
 							<p class="text-center fsz-xl mt-4 fw-300 ta-c">

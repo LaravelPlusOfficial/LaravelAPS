@@ -12,7 +12,12 @@
                 loadingWorkload: true,
                 stats: {},
                 workers: [],
-                workload: []
+                workload: [],
+                redisConnected: false,
+                redisErrors: {
+                    message: null,
+                    exception: null
+                }
             }
         },
 
@@ -31,7 +36,7 @@
                 this.loadWorkload()
 
                 this.refreshStatsPeriodically()
-                
+
             },
 
             loadStats(reload = true) {
@@ -49,6 +54,15 @@
                             this.stats.max_wait_queue = _.keys(response.data.wait)[0].split(':')[1];
                         }
 
+                        this.redisConnected = true;
+                        this.loadingStats = false
+                    })
+                    .catch(error => {
+                        //Predis\Connection\ConnectionException
+                        this.stats.status = 'error';
+                        this.redisConnected = false;
+                        this.redisErrors.message = error.response.data.message;
+                        this.redisErrors.exception = error.response.data.exception;
                         this.loadingStats = false
                     });
             },
@@ -82,23 +96,27 @@
 
 
             refreshStatsPeriodically() {
-                this.interval = setInterval(() => {
-                    this.loadStats(false)
-                    this.loadWorkers(false)
-                    this.loadWorkload(false)
-                }, 5000);
+
+                if (this.redisConnected) {
+                    this.interval = setInterval(() => {
+                        this.loadStats(false)
+                        this.loadWorkers(false)
+                        this.loadWorkload(false)
+                    }, 5000);
+                }
+
             },
 
             /**
              *  Count processes for the given supervisor.
              */
-            countProcesses(processes){
+            countProcesses(processes) {
                 return _.chain(processes).values().sum().value()
             },
             /**
              *  Format the Supervisor display name.
              */
-            superVisorDisplayName(supervisor, worker){
+            superVisorDisplayName(supervisor, worker) {
                 return _.replace(supervisor, worker + ':', '');
             },
 
@@ -106,12 +124,12 @@
              *
              * @returns {string}
              */
-            humanTime(time){
+            humanTime(time) {
                 return moment.duration(time, "seconds").humanize().replace(/^(.)|\s+(.)/g, function ($1) {
                     return $1.toUpperCase();
                 });
             }
-            
+
         }
 
 

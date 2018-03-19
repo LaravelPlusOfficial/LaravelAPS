@@ -57,7 +57,7 @@
 					</div>
 					
 					<p class="d-flex justify-content-center mt-5 mb-5">
-						<vue-svg name="lp-logo-full-dark" width="300" height="60"></vue-svg>
+						<vue-svg name="aps-logo-full-dark" width="300" height="60"></vue-svg>
 					</p>
 					
 					<p class="text-center fs-12 txt-6 txt-up ls-12 mb-0">

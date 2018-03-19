@@ -161,12 +161,12 @@ class SettingsTableSeeder extends Seeder
                 ],
                 'welcome_hero_title'            => [
                     'type'  => 'textarea',
-                    'value' => '<span class="fw-300">Welcome to</span>&nbsp;<span class="fw-700 ls-16 c-primary">Laravel plus</span>',
+                    'value' => 'Welcome to <span class="c-primary tt-u fw-300">Laravel<span class="fw-700">APS</span></span>',
                     'help'  => 'HTML allowed'
                 ],
                 'welcome_hero_sub_title'        => [
                     'type'  => 'textarea',
-                    'value' => 'We are people in love with <span class="fw-500 ls-12">Laravel</span>. In this website we share our experience, codes, and snippets to help other fellow developers. Lets learn something new <span class="fw-500 ls-12">together</span>',
+                    'value' => 'Open source <span class="fw-700">Hackable</span> Content Management System',
                     'help'  => 'HTML allowed'
                 ],
                 'default_user_avatar'           => [

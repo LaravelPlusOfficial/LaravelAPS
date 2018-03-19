@@ -7,7 +7,7 @@
 		<!-- Logo -->
 		<div class="off-canvas-logo d-f ac-c jc-sb ai-c">
 			<a href="/" class="d-f jc-c ac-c ai-c">
-				<vue-svg name="lp-logo-small-white" width="60" height="30"></vue-svg>
+				<vue-svg name="aps-logo-small-white" width="60" height="30"></vue-svg>
 			</a>
 			<a href="#" @click.prevent="toggleOffCanvas()" class="d-f fill-white">
 				<vue-svg name="icon-x" square="20"></vue-svg>

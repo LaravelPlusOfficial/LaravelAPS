@@ -10,7 +10,7 @@
 
             <a href="/" class="d-flex justify-content-center">
                 <svg width="250" height="50">
-                    <use xlink:href="#lp-logo-full-white"></use>
+                    <use xlink:href="#aps-logo-full-white"></use>
                 </svg>
             </a>
 

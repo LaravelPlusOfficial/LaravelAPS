@@ -54,7 +54,15 @@ const admin = new Vue({
 
     methods: {
         toggleOffCanvas() {
-            this.$refs.offCanvasMenu.classList.toggle('open')
+            // this.$refs.offCanvasMenu.classList.toggle('open')
+
+            let opened = this.$refs.offCanvasMenu.classList.toggle('open')
+
+            if (opened) {
+                document.body.classList.add('off-canvas-open-left', 'ovf-h')
+            } else {
+                document.body.classList.remove('off-canvas-open-left', 'ovf-h')
+            }
         },
 
         confirmAndSubmit(msg) {

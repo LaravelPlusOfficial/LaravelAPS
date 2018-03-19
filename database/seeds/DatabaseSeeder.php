@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\App;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,14 +18,20 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AccessControlTableSeeder::class);
 
-        // $this->call(TaxonomiesTableSeeder::class);
+        if (App::environment() == 'local') {
 
-        // $this->call(UsersTableSeeder::class);
+            $this->call(TaxonomiesTableSeeder::class);
 
-        // $this->call(PagesTableSeeder::class);
+            $this->call(UsersTableSeeder::class);
 
-        // $this->call(PostsTableSeeder::class);
+            $this->call(PagesTableSeeder::class);
 
-        //$this->call(CommentsTableSeeder::class);
+            $this->call(PostsTableSeeder::class);
+
+            $this->call(CommentsTableSeeder::class);
+
+        }
+
     }
+    
 }

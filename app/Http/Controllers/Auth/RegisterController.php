@@ -23,9 +23,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers, Registerable {
-
         Registerable::registered insteadof RegistersUsers;
-
     }
 
     /**

@@ -43,7 +43,7 @@ trait Registerable
      */
     public function setDefaultRole($defaultRole = null)
     {
-        $this->defaultRole = $defaultRole ?: Role::whereSlug(config('aps.acl.default_role'))->firstOrFail();
+        $this->defaultRole = $defaultRole ?: Role::whereSlug(setting('users_default_role', 'subscriber'))->firstOrFail();
     }
 
     /**

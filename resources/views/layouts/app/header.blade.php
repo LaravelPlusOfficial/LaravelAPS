@@ -7,10 +7,10 @@
 			<!--- LOGO --->
 			<a class="navbar-brand d-flex" href="/">
 				<svg width="220" height="30" class="d-none d-lg-block d-xl-block">
-					<use xlink:href="#lp-logo-full"></use>
+					<use xlink:href="#aps-logo-full-color"></use>
 				</svg>
-				<svg width="40" height="30" class="d-lg-none d-xl-none">
-					<use xlink:href="#lp-logo-small-dark"></use>
+				<svg width="80" height="30" class="d-lg-none d-xl-none">
+					<use xlink:href="#aps-logo-small-color"></use>
 				</svg>
 			</a>
 			

@@ -10,6 +10,11 @@
 			Queues Monitoring
 			@endpageTitle
 			
+			<div class="grad-error bdr-10 p-3 mb-4" v-if="redisErrors.exception">
+				<p class="mb-0" v-text="redisErrors.message"></p>
+				<p class="mb-0" v-text="'Exception: ' + redisErrors.exception"></p>
+			</div>
+			
 			
 			<!--- Statuses --->
 		@include('admin.queues._partials.status-widgets')
