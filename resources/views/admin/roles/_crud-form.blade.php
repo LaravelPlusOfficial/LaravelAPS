@@ -59,7 +59,7 @@
             @foreach($permissions as $letter => $permissionsCollection)
 
                 <div class="col-lg-12">
-                    <ul class="list-unstyled pt-1 pl-2 pr-2">
+                    <ul class="list-unstyled pl-2 pr-2 pt-0 mb-0">
                         @foreach($permissionsCollection as $permission)
                             <li>
 
@@ -86,7 +86,7 @@
 
         </div>
 
-        <div class="d-f jc-sb">
+        <div class="d-f jc-sb mt-3">
             <button type="submit"
                     {{ ! $editable ? 'disabled' : '' }}
                     class="btn btn-primary tt-u fsz-sm ls-12">

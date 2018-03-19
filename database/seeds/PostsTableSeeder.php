@@ -17,7 +17,7 @@ class PostsTableSeeder extends Seeder
 
     protected function createPosts()
     {
-        factory(\App\Models\Post::class, 2)->create(['post_type' => 'post']);
+        factory(\App\Models\Post::class, 50)->create(['post_type' => 'post']);
 
         $posts = \App\Models\Post::get();
 

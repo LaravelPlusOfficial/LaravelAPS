@@ -13601,7 +13601,8 @@ label,
   top: 1px;
   width: 18px;
   height: 18px;
-  border: 1px solid #495057;
+  border: 2px solid #6c757d;
+  border-radius: 3px;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
@@ -13610,10 +13611,10 @@ label,
 .form-radio span:after {
   position: absolute;
   content: '';
-  left: 6px;
-  top: 3px;
-  width: 6px;
-  height: 12px;
+  left: 7px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
   border: 2px solid #495057;
   border-top: 0;
   border-left: 0;

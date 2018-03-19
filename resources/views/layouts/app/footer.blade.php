@@ -30,12 +30,12 @@
 							
 							<a href=""
 							   onclick="event.preventDefault();document.getElementById('logout-form').submit();"
-							   class="fsz-sm tt-u ls-12 c-white mr-4">Logout</a>
+							   class="fsz-sm tt-u ls-12 c-white">Logout</a>
 						@endauth
 						
 						@guest
 							<a href="{{ url('/login') }}" class="fsz-sm tt-u ls-12 c-white mr-4">Login</a>
-							<a href="{{ url('/register') }}" class="fsz-sm tt-u ls-12 c-white mr-4">Register</a>
+							<a href="{{ url('/register') }}" class="fsz-sm tt-u ls-12 c-white">Register</a>
 						@endguest
 					
 					</p>
@@ -51,7 +51,7 @@
 								Conditions</a>
 						</p>
 						<p class="mb-2">
-							<a href="{{ route('post.show', 'contact') }}" class="fsz-sm tt-u ls-12 mb-2 c-white mr-4">Contact
+							<a href="{{ route('post.show', 'contact') }}" class="fsz-sm tt-u ls-12 mb-2 c-white">Contact
 								Us</a>
 						</p>
 					</div>
@@ -60,10 +60,10 @@
 						<vue-svg name="aps-logo-full-dark" width="300" height="60"></vue-svg>
 					</p>
 					
-					<p class="text-center fs-12 txt-6 txt-up ls-12 mb-0">
-						&copy; Laravel Plus 2018
+					<p class="text-center fs-12 txt-6 txt-up ls-12 mb-0 fw-300 c-gray">
+						&copy; LaravelAPS 2018
 					</p>
-					<p class="text-center fs-12 txt-6 txt-up ls-12 mb-5">
+					<p class="text-center fs-12 txt-6 txt-up ls-12 mb-5 fw-300 c-gray">
 						All rights reserved
 					</p>
 				

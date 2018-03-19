@@ -144,7 +144,7 @@ class SettingsTableSeeder extends Seeder
             'post'             => [
                 'default_pagination_count' => [
                     'type'  => 'number',
-                    'value' => '10',
+                    'value' => '12',
                 ],
             ],
             'security'         => [
@@ -174,7 +174,7 @@ class SettingsTableSeeder extends Seeder
                     'value' => ''
                 ],
                 'theme_color'                   => [
-                    'type'  => 'input',
+                    'type'  => '',
                     'value' => '#E83E8C'
                 ]
             ],
