@@ -1,5 +1,3 @@
-<newsletter subscribe-url="{{ route('newsletter.subscribe') }}"></newsletter>
-
 <footer class="footer pb-5 pt-5 bg-dark text-white">
 	
 	<section class="footer-wrap">

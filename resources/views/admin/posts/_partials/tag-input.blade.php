@@ -3,9 +3,9 @@
            @tag-removed="tagRemoved"
            :tags-data="postData ? postData.tags : []"
            inline-template>
-    <div class="bd" v-cloak>
+    <div class="" v-cloak>
 
-        <div class="selected-tags d-f jc-fs fxw-w p-2">
+        <div class="selected-tags d-f jc-fs fxw-w pb-2">
             <div class="selected-tag d-f jc-c ac-c ai-c bd"
                  v-for="(selectedTag, index) in tags"
                  v-if="tags.length > 0"
@@ -16,7 +16,7 @@
             <p class="mb-0" v-if="tags.length <= 0 ">No tags have been added yet</p>
         </div>
 
-        <div class="tag-input-wrap ml-2 mr-2 mb-2">
+        <div class="tag-input-wrap mb-2">
             <input type="text"
                    class="form-control tag-input"
                    :class="{ 'right-space' : addingToDatabase }"

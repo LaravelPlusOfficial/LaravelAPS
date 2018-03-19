@@ -26,6 +26,8 @@
 	
 	@yield('content')
 	
+	<newsletter subscribe-url="{{ route('newsletter.subscribe') }}"></newsletter>
+	
 	@include('layouts.app.footer')
 	
 	@include('layouts.common.flash')

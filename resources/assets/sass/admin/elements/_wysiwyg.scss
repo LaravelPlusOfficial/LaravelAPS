@@ -11,17 +11,35 @@
 //  background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI0IDI0Ij4KPHBhdGggZD0iTTIzLjUgNi4xYy0wLjMtMC4yLTAuNy0wLjEtMSAwLjFsLTUuNSAzLjl2LTMuMWMwLTEuNy0xLjMtMy0zLTNoLTExYy0xLjcgMC0zIDEuMy0zIDN2MTBjMCAxLjcgMS4zIDMgMyAzaDExYzEuNyAwIDMtMS4zIDMtM3YtMy4xbDUuNCAzLjljMC4yIDAuMSAwLjQgMC4yIDAuNiAwLjJzMC4zIDAgMC41LTAuMWMwLjMtMC4yIDAuNS0wLjUgMC41LTAuOXYtMTBjMC0wLjQtMC4yLTAuNy0wLjUtMC45ek0xNSAxN2MwIDAuNi0wLjQgMS0xIDFoLTExYy0wLjYgMC0xLTAuNC0xLTF2LTEwYzAtMC42IDAuNC0xIDEtMWgxMWMwLjYgMCAxIDAuNCAxIDF2MTB6TTIyIDE1LjFsLTQuMy0zLjEgNC4zLTMuMXY2LjJ6Ij48L3BhdGg+Cjwvc3ZnPgo=);
 //}
 
-$mde-toolbar-bg: linear-gradient(to bottom, #4BC0C8, #af65b8);
-$mde-top-color: #4BC0C8;
-$mde-bottom-color: #af65b8;
+// $mde-toolbar-bg: linear-gradient(to bottom, #4BC0C8, #af65b8);
+// $mde-top-color: #4BC0C8;
+// $mde-bottom-color: #af65b8;
+// $mde-button-bg-active: rgba(255, 255, 255, 0.3);
+// $mde-button-bg-hover: rgba(255, 255, 255, 0.3);
+// $mde-button-color: white;
+// $mde-placeholder-color: $gray-500;
+// $mde-form-bg: $mde-toolbar-bg;
+// $mde-toolbar-form-color: white;
+// $mde-toolbar-preview-bg: linear-gradient(to bottom, #af65b8, #4BC0C8);
+// $mde-insert-buttons-active-color: $primary;
+
+//$mde-toolbar-bg: linear-gradient(to bottom, #4BC0C8, #af65b8);
+$mde-toolbar-bg: $gray-200;
+//$mde-top-color: #4BC0C8;
+$mde-top-color: $gray-200;
+//$mde-bottom-color: #af65b8;
+$mde-bottom-color: $gray-200;
 $mde-button-bg-active: rgba(255, 255, 255, 0.3);
-$mde-button-bg-hover: rgba(255, 255, 255, 0.3);
-$mde-button-color: white;
+$mde-button-bg-hover: white;
+$mde-button-color: $gray-600;
+$mde-text-color: $gray-600;
 $mde-placeholder-color: $gray-500;
 $mde-form-bg: $mde-toolbar-bg;
-$mde-toolbar-form-color: white;
-$mde-toolbar-preview-bg: linear-gradient(to bottom, #af65b8, #4BC0C8);
+$mde-toolbar-form-color: $gray-600;
+//$mde-toolbar-preview-bg: linear-gradient(to bottom, #af65b8, #4BC0C8);
+$mde-toolbar-preview-bg: $gray-200;
 $mde-insert-buttons-active-color: $primary;
+
 
 .medium-editor-element {
   border: 1px solid $input-border-color;
@@ -60,13 +78,15 @@ $mde-insert-buttons-active-color: $primary;
   border: none;
   border-radius: 5px;
   background: $mde-toolbar-bg;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12),
+    0 2px 4px 0 rgba(0,0,0,0.08);
 }
 
 .medium-editor-toolbar li button {
   background-color: transparent;
   border: none;
   box-sizing: border-box;
-  color: white;
+  color: $mde-text-color;
   height: 40px;
   min-width: 40px;
   //padding: 0;
