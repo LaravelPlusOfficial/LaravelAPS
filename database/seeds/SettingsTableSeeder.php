@@ -120,7 +120,7 @@ class SettingsTableSeeder extends Seeder
                 ],
                 'page_id'   => [
                     'type'  => 'input',
-                    'value' => '710844062416439'
+                    'value' => ''
                 ]
             ],
             'twitter'          => [
@@ -174,7 +174,7 @@ class SettingsTableSeeder extends Seeder
                     'value' => ''
                 ],
                 'theme_color'                   => [
-                    'type'  => 'color',
+                    'type'  => 'input',
                     'value' => '#E83E8C'
                 ]
             ],
