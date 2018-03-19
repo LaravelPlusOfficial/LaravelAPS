@@ -752,16 +752,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.50",
+            "version": "v0.51",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client-services.git",
-                "reference": "3e792254734e4444dd8a594e927926f28de2e609"
+                "reference": "c3d936baf3eacc002f6183530355fe4fba19b0fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/3e792254734e4444dd8a594e927926f28de2e609",
-                "reference": "3e792254734e4444dd8a594e927926f28de2e609",
+                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/c3d936baf3eacc002f6183530355fe4fba19b0fb",
+                "reference": "c3d936baf3eacc002f6183530355fe4fba19b0fb",
                 "shasum": ""
             },
             "require": {
@@ -785,7 +785,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-03-10T00:23:06+00:00"
+            "time": "2018-03-18T00:23:20+00:00"
         },
         {
             "name": "google/auth",
@@ -3991,16 +3991,16 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v5.6.11",
+            "version": "v5.6.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
-                "reference": "df66d4a8b4734ffc34808acf7e6671711a3cebd4"
+                "reference": "ead901501cb8f99cec315dbd2daa320858fb646c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/df66d4a8b4734ffc34808acf7e6671711a3cebd4",
-                "reference": "df66d4a8b4734ffc34808acf7e6671711a3cebd4",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/ead901501cb8f99cec315dbd2daa320858fb646c",
+                "reference": "ead901501cb8f99cec315dbd2daa320858fb646c",
                 "shasum": ""
             },
             "require": {
@@ -4037,7 +4037,7 @@
                 "collection",
                 "laravel"
             ],
-            "time": "2018-03-09T18:24:45+00:00"
+            "time": "2018-03-16T15:20:14+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
