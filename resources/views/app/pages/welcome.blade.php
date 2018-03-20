@@ -8,7 +8,7 @@
 	
 	<main class="main">
 		
-		<!--- Hero --->
+		<!-- Hero -->
 		<section class="hero hero-welcome pt-5 pb-5"
 		         style="background-image: url({{ setting('site_welcome_hero_background_image', mix('/site/defaults/welcome-hero-background.jpg')) }})">
 			<div class="container-fluid mt-7">
@@ -28,7 +28,7 @@
 		</section>
 		
 		
-		<!--- Posts --->
+		<!-- Posts -->
 		<section class="posts bgc-gray-lighter">
 			
 			<div class="container-fluid pt-5 pb-5">

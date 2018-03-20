@@ -1,8 +1,10 @@
 {
-  "name": "laravel/laravel",
-  "description": "The Laravel Framework.",
+  "name": "LaravelPlusOfficial/LaravelAPS",
+  "description": "Open Source Laravel Content Management System (CMS).",
   "keywords": [
-    "framework",
+    "vuejs",
+    "cms",
+    "php",
     "laravel"
   ],
   "license": "MIT",

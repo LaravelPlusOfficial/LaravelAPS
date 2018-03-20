@@ -4,7 +4,7 @@
 
         <button type="button"
                 @click.prevent="showToc = !showToc"
-                class="bg-n bd-n p-0 m-0 lh-1 fsz-sm p-ab r-0 fill-gray fill-primary-hv fullscreen-btn otl-n-fc cur-p"
+                class="bg-n bd-n p-0 m-0 lh-1 fsz-sm p-ab r-0 fill-gray fill-primary-hv otl-n-fc cur-p"
                 style="top: -25px; right: 40px">
             <vue-svg name="icon-list-numbered" square="20"></vue-svg>
         </button>

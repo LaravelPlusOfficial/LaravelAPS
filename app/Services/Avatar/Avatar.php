@@ -94,8 +94,6 @@ class Avatar implements AvatarContract
 
         $this->deleteIfAvatarExisted();
 
-        //$this->setDefaultAvatar();
-
         return response()->json(['avatar' => $this->user->fresh()->avatar], 200);
     }
 
@@ -132,6 +130,10 @@ class Avatar implements AvatarContract
             if ($this->disk->exists($this->user->avatar)) {
                 $this->disk->delete($this->user->avatar);
             }
+
+            $this->user->avatar = null;
+
+            $this->user->save();
         }
 
         return $this;

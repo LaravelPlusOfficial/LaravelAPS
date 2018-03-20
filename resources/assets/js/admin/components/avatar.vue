@@ -87,7 +87,6 @@
 
                 axios.delete(this.avatarUrl)
                     .then(({data}) => {
-                        console.log(data);
                         this.avatar = data.avatar
                         flash('Avatar deleted')
                         this.$refs.input.value = null
